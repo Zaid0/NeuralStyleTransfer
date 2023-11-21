@@ -54,10 +54,10 @@ def home_page(session_state):
 
     # Add links or buttons for examples
     st.subheader("Examples:")
-    example('Example 1: Transforming A Dog Image into digital style',  "contents/dog.jpg", "styles/digital_art_1.jpg", "outputs/dog_ouput.png", flag=False,
+    example('Example 1: Transforming A Dog Image into digital style',  "assets/contents/dog.jpg", "assets/styles/digital_art_1.jpg", "assets/outputs/dog_ouput.png", flag=False,
             )
 
-    example('Example 2: Transforming a sea Image into Starry Night Style', "contents/seasky.jpg", "styles/starry_night 1.jpeg", "outputs/seasky_ouput.png",
+    example('Example 2: Transforming a sea Image into Starry Night Style', "assets/contents/seasky.jpg", "assets/styles/starry_night 1.jpeg", "assets/outputs/seasky_ouput.png",
             flag=True)
 
     # Add a button to try neural style transfer
@@ -127,7 +127,7 @@ def example(style_description, content_path, style_path, output_path, flag=False
 
         # Display generated output image with decreased margin
     with col5:
-        st.image(output_path, caption=f"Output Image in {style_description} style", use_column_width=True)
+        st.image(output_path, caption=f"Generated Image", use_column_width=True)
 
     st.markdown(
         """
@@ -161,10 +161,10 @@ def try_neural_style_transfer(session_state):
     st.title("Neural Style Transfer App")
     st.write("Transform your images with artistic styles using Neural Style Transfer.")
 
-    contents_path = 'contents'
+    contents_path = 'assets/contents'
     contents_image_paths = [file for file in os.listdir(contents_path)]
 
-    style_path = 'styles'
+    style_path = 'assets/styles'
     styles_image_paths = [file for file in os.listdir(style_path)]
 
     # Sidebar for instructions
@@ -191,7 +191,7 @@ def try_neural_style_transfer(session_state):
     # Download CV Section
     st.sidebar.markdown("---")
     st.sidebar.header("Download CV")
-    st.sidebar.markdown(get_binary_file_downloader_html('resume.pdf', 'cv'), unsafe_allow_html=True)
+    st.sidebar.markdown(get_binary_file_downloader_html('assets/resume.pdf', 'cv'), unsafe_allow_html=True)
 
     # User-defined parameters for shape
     st.header("Image Shape")
@@ -334,11 +334,11 @@ def main():
     # Streamlit app title and description
     # st.write("Transform your images with artistic styles using Neural Style Transfer.")
 
-    contents_path = 'contents'
-    contents_image_paths = [file for file in os.listdir(contents_path)]
+    # contents_path = 'contents'
+    # contents_image_paths = [file for file in os.listdir(contents_path)]
 
-    style_path = 'styles'
-    styles_image_paths = [file for file in os.listdir(style_path)]
+    # style_path = 'styles'
+    # styles_image_paths = [file for file in os.listdir(style_path)]
 
     css = '''
     <style>
