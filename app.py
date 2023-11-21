@@ -167,6 +167,17 @@ def try_neural_style_transfer(session_state):
     style_path = 'assets/styles'
     styles_image_paths = [file for file in os.listdir(style_path)]
 
+    # st.sidebar.markdown( f"""
+    # <style>
+    #     [data-testid="stSidebar"] {{
+    #         background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");
+    #         background-size: cover;
+    #         background-position: center center;
+    #         background-repeat: no-repeat;
+    #     }}
+    # </style>
+    # """,
+    # unsafe_allow_html=True)
     # Sidebar for instructions
     st.sidebar.title("Instructions")
     st.sidebar.write("1. Choose a model from the dropdown.")
