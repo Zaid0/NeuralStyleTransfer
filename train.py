@@ -2,11 +2,9 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import torch.optim as optim
 from utils import imcnvt, load_imgs
-from model import VGG19
-from resnet import CustomResNet
+from models.models import VGG19, CustomResNet, InceptionV3
 from NSTLoss import NSTLoss
 import torch
-from inception import InceptionV3
 
 
 

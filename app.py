@@ -180,10 +180,9 @@ def try_neural_style_transfer(session_state):
     # unsafe_allow_html=True)
     # Sidebar for instructions
     st.sidebar.title("Instructions")
-    st.sidebar.write("1. Choose a model from the dropdown.")
-    st.sidebar.write("2. Upload a content image and a style image.")
-    st.sidebar.write("3. Adjust parameters on the right.")
-    st.sidebar.write("4. Click 'Start Style Transfer'.")
+    st.sidebar.write("1. Upload a content image and a style image, or select from the available images.")
+    st.sidebar.write("2. Adjust the hyperparameters if you're a nerd!")
+    st.sidebar.write("3. Click 'Start Style Transfer'.")
     st.sidebar.markdown("---")
     st.sidebar.title("Contacts")
     st.sidebar.write("   - Email: zaidrjoub.jobs@gmail.com")
@@ -277,7 +276,7 @@ def try_neural_style_transfer(session_state):
 
     with col_params2:
         beta = st.slider("Style Weight (Beta):", 0.0, 10000.0, 1000.0)
-        total_steps = st.slider("Total Steps:", 10, 1000, 50)
+        total_steps = st.slider("Total Steps:", 10, 100, 10)
 
     # Use a single row with two columns for content layer and style layers
     col_layers1, col_layers2 = st.columns(2)

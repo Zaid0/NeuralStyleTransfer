@@ -1,8 +1,8 @@
 from train import train
 
 
-content_img_path = "contents/seasky.jpg"
-style_img_path = "styles/starry_night 1.jpeg"
+content_img_path = "assets/contents/seasky.jpg"
+style_img_path = "assets/styles/starry_night 1.jpeg"
 shape = (512, 682)
 total_steps = 4000
 lr = .007
